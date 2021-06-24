@@ -1,8 +1,9 @@
 {
   "name": "fp-async-utils",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "FP-inspired helpers for asynchronous code",
   "main": "index.js",
+  "types": "index.d.ts",
   "scripts": {
     "prettier": "prettier *.js --write",
     "test": "mocha index.test.js",
