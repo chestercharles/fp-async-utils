@@ -1,5 +1,6 @@
 src
 test
+index.test.js
 .babelrc
 tsconfig.json
 package-lock.json
