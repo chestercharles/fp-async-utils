@@ -10,6 +10,14 @@
   },
   "author": "Chester Carmer",
   "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/chestercharles/fp-async-utils.git"
+  },
+  "bugs": {
+    "url": "https://github.com/chestercharles/fp-async-utils/issues"
+  },
+  "homepage": "https://github.com/chestercharles/fp-async-utils#readme",
   "devDependencies": {
     "chai": "^4.3.4",
     "mocha": "^9.0.1",

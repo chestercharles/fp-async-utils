@@ -1,6 +1,6 @@
 # fp-async-utils
 A library that exposes a handful of helpful FP-inspired utilities to work with asynchronous code.
-
+No dependencies.
 ## Installation
 `npm i fp-async-utils`
 
