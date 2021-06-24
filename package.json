@@ -1,0 +1,18 @@
+{
+  "name": "fp-async-utils",
+  "version": "1.0.0",
+  "description": "FP-inspired helpers for asynchronous code",
+  "main": "index.js",
+  "scripts": {
+    "prettier": "prettier *.js --write",
+    "test": "mocha index.test.js",
+    "prepublish": "npm run prettier"
+  },
+  "author": "Chester Carmer",
+  "license": "MIT",
+  "devDependencies": {
+    "chai": "^4.3.4",
+    "mocha": "^9.0.1",
+    "prettier": "^2.3.1"
+  }
+}

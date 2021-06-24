@@ -1,0 +1,15 @@
+src
+test
+.babelrc
+tsconfig.json
+package-lock.json
+
+npm-debug.log*
+_vimrc_local.vim
+.npm
+.git
+.eslintcache
+.node_repl_history
+.travis.yml
+coverage
+.nyc_output
