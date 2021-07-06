@@ -15,12 +15,10 @@ const asyncFlow =
 const asyncPipe = (input, ...fns) => asyncFlow(...fns)(input);
 
 /**
- * Apply a series of asynchronous OR synchronous functions to every item in an array. Always returns a Promise.
+ * Apply an asynchronous OR synchronous function to every item in an array. Always returns a Promise.
  */
-const asyncMap =
-  (...fns) =>
-  (arr) =>
-    Promise.all(arr.map(async (itm) => asyncPipe(itm, ...fns)));
+const asyncMap = (fn) => (arr) =>
+  Promise.all(arr.map(async (itm) => asyncPipe(itm, fn)));
 
 /**
  * Apply a asynchronous OR synchronous predicate to filter out items in an array. Always returns a Promise.
