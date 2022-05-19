@@ -146,7 +146,7 @@ export declare function asyncPipe<R0, R1, R2, R3, R4, R5, R6, R7, R8>(
  */
 export declare function asyncMap<Item, MappedItem>(
   fn: (a: Item) => MappedItem
-): (arr: Item[]) => Promise<MappedItem[]>;
+): (arr: Item[]) => Promise<ThenArg<MappedItem>[]>;
 /**
  * Sets a value to an object's property
  */
