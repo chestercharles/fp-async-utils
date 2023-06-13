@@ -1,7 +1,7 @@
 /**
  * Compose a function from a series of other functions applied left-to-right
  */
-const asyncFlow =
+const flow =
   (...fns) =>
   (input) =>
     fns.reduce(
@@ -10,21 +10,42 @@ const asyncFlow =
     );
 
 /**
- * Apply a series of asynchronous OR synchronous functions to an input. Always returns a Promise.
+ * Compose a function from a series of other functions applied left-to-right. Alias for `flow`.
+ */
+const asyncFlow = flow.bind({});
+
+/**
+ * Apply a series of asynchronous OR synchronous functions to an input. Always returns a Promise. Alias for `pipe`.
  */
 const asyncPipe = (input, ...fns) => asyncFlow(...fns)(input);
 
 /**
+ * Apply a series of asynchronous OR synchronous functions to an input. Always returns a Promise.
+ */
+const pipe = asyncPipe.bind({});
+
+/**
  * Apply an asynchronous OR synchronous function to every item in an array. Always returns a Promise.
  */
-const asyncMap = (fn) => (arr) =>
+const map = (fn) => (arr) =>
   Promise.all(arr.map(async (itm) => asyncPipe(itm, fn)));
+
+/**
+ * Apply an asynchronous OR synchronous function to every item in an array. Always returns a Promise. Alias for `map`.
+ */
+const asyncMap = map.bind({});
+
+/**
+ * Apply a asynchronous OR synchronous predicate to filter out items in an array. Always returns a Promise. Alias for `filter`.
+ **/
+
+const filter = (fn) => (arr) =>
+  Promise.all(arr.map(fn)).then((results) => arr.filter((v, i) => results[i]));
 
 /**
  * Apply a asynchronous OR synchronous predicate to filter out items in an array. Always returns a Promise.
  */
-const asyncFilter = (fn) => (arr) =>
-  Promise.all(arr.map(fn)).then((results) => arr.filter((v, i) => results[i]));
+const asyncFilter = filter.bind({});
 
 /**
  * Sets a value to an object's property
@@ -50,8 +71,12 @@ const ado = async (promiseObject) => {
 module.exports = {
   ado,
   asyncFlow,
+  flow,
   asyncPipe,
+  pipe,
   asyncMap,
+  map,
   setIn,
   asyncFilter,
+  filter,
 };
