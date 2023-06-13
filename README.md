@@ -9,25 +9,25 @@ No dependencies.
 
 ## Usage
 
-### asyncPipe
+### pipe
 
 Apply a series of asynchronous OR synchronous functions to an input. Always returns a Promise.
 
 ```typescript
 const addTwo = async (value: number) => value + 2;
 const addTwoSync = (value: number) => value + 2;
-const result = await asyncPipe(1, addTwo, addTwoSync);
+const result = await pipe(1, addTwo, addTwoSync);
 console.log(result); // 5
 ```
 
-### asyncFlow
+### flow
 
 Compose a function from a series of other functions applied left-to-right
 
 ```typescript
 const addTwo = async (value: number) => value + 2;
 const addTwoSync = (value: number) => value + 2;
-const addFour = asyncFlow(addTwo, addTwoSync);
+const addFour = flow(addTwo, addTwoSync);
 const result = await addFour(1);
 console.log(result); // 5
 ```
@@ -45,25 +45,25 @@ const resolvedObj = await ado(promiseObj);
 console.log(resolvedObj.a); // 1
 ```
 
-### asyncMap
+### map
 
 Apply a series of asynchronous OR synchronous functions to every item in an array. Always returns a Promise.
 
 ```typescript
 const arr = [1, 2, 3];
 const addTwo = async (value: number) => value + 2;
-const result = await asyncPipe(arr, asyncMap(addTwo));
+const result = await pipe(arr, map(addTwo));
 console.log(result); // [3, 4, 5]
 ```
 
-### asyncFilter
+### filter
 
 Apply a asynchronous OR synchronous predicate to filter out items in an array. Always returns a Promise.
 
 ```typescript
 const arr = [1, 2, 3];
 const isEven = async (n: number) => n % 2 == 0;
-const result = await asyncPipe(arr, asyncFilter(isEven));
+const result = await pipe(arr, filter(isEven));
 console.log(result); // [2]
 ```
 
@@ -73,6 +73,6 @@ Sets a value to an object's property
 
 ```typescript
 const obj = { a: 1, b: 1 };
-const result = await asyncPipe(2, setIn(obj, "b"));
+const result = await pipe(2, setIn(obj, "b"));
 console.log(result); // { a: 1, b: 2 }
 ```

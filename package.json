@@ -1,6 +1,6 @@
 {
   "name": "fp-async-utils",
-  "version": "2.0.1",
+  "version": "3.0.0",
   "description": "FP-inspired helpers for asynchronous code",
   "main": "index.js",
   "types": "index.d.ts",
