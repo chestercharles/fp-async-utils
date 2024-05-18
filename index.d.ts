@@ -71,6 +71,29 @@ export declare function flow<R0, R1, R2, R3, R4, R5, R6, R7, R8>(
   f7: (a: R6) => SoA<R7>,
   f8: (a: R7) => SoA<R8>
 ): (input: R0) => Promise<R8>;
+export declare function flow<R0, R1, R2, R3, R4, R5, R6, R7, R8, R9>(
+  f1: (a: R0) => SoA<R1>,
+  f2: (a: R1) => SoA<R2>,
+  f3: (a: R2) => SoA<R3>,
+  f4: (a: R3) => SoA<R4>,
+  f5: (a: R4) => SoA<R5>,
+  f6: (a: R5) => SoA<R6>,
+  f7: (a: R6) => SoA<R7>,
+  f8: (a: R7) => SoA<R8>,
+  f9: (a: R8) => SoA<R9>
+): (input: R0) => Promise<R9>;
+export declare function flow<R0, R1, R2, R3, R4, R5, R6, R7, R8, R9, R10>(
+  f1: (a: R0) => SoA<R1>,
+  f2: (a: R1) => SoA<R2>,
+  f3: (a: R2) => SoA<R3>,
+  f4: (a: R3) => SoA<R4>,
+  f5: (a: R4) => SoA<R5>,
+  f6: (a: R5) => SoA<R6>,
+  f7: (a: R6) => SoA<R7>,
+  f8: (a: R7) => SoA<R8>,
+  f9: (a: R8) => SoA<R9>,
+  f10: (a: R9) => SoA<R10>
+): (input: R0) => Promise<R10>;
 /**
  * Compose a function from a series of other functions applied left-to-right. Alias for `flow`.
  */
@@ -132,6 +155,29 @@ export declare function asyncFlow<R0, R1, R2, R3, R4, R5, R6, R7, R8>(
   f7: (a: R6) => SoA<R7>,
   f8: (a: R7) => SoA<R8>
 ): (input: R0) => Promise<R8>;
+export declare function asyncFlow<R0, R1, R2, R3, R4, R5, R6, R7, R8, R9>(
+  f1: (a: R0) => SoA<R1>,
+  f2: (a: R1) => SoA<R2>,
+  f3: (a: R2) => SoA<R3>,
+  f4: (a: R3) => SoA<R4>,
+  f5: (a: R4) => SoA<R5>,
+  f6: (a: R5) => SoA<R6>,
+  f7: (a: R6) => SoA<R7>,
+  f8: (a: R7) => SoA<R8>,
+  f9: (a: R8) => SoA<R9>
+): (input: R0) => Promise<R9>;
+export declare function asyncFlow<R0, R1, R2, R3, R4, R5, R6, R7, R8, R9, R10>(
+  f1: (a: R0) => SoA<R1>,
+  f2: (a: R1) => SoA<R2>,
+  f3: (a: R2) => SoA<R3>,
+  f4: (a: R3) => SoA<R4>,
+  f5: (a: R4) => SoA<R5>,
+  f6: (a: R5) => SoA<R6>,
+  f7: (a: R6) => SoA<R7>,
+  f8: (a: R7) => SoA<R8>,
+  f9: (a: R8) => SoA<R9>,
+  f10: (a: R9) => SoA<R10>
+): (input: R0) => Promise<R10>;
 /**
  * Apply a series of asynchronous OR synchronous functions to an input. Always returns a Promise.
  */
@@ -202,6 +248,31 @@ export declare function pipe<R0, R1, R2, R3, R4, R5, R6, R7, R8>(
   f7: (a: R6) => SoA<R7>,
   f8: (a: R7) => SoA<R8>
 ): Promise<R8>;
+export declare function pipe<R0, R1, R2, R3, R4, R5, R6, R7, R8, R9>(
+  input: R0,
+  f1: (a: R0) => SoA<R1>,
+  f2: (a: R1) => SoA<R2>,
+  f3: (a: R2) => SoA<R3>,
+  f4: (a: R3) => SoA<R4>,
+  f5: (a: R4) => SoA<R5>,
+  f6: (a: R5) => SoA<R6>,
+  f7: (a: R6) => SoA<R7>,
+  f8: (a: R7) => SoA<R8>,
+  f9: (a: R8) => SoA<R9>
+): Promise<R9>;
+export declare function pipe<R0, R1, R2, R3, R4, R5, R6, R7, R8, R9, R10>(
+  input: R0,
+  f1: (a: R0) => SoA<R1>,
+  f2: (a: R1) => SoA<R2>,
+  f3: (a: R2) => SoA<R3>,
+  f4: (a: R3) => SoA<R4>,
+  f5: (a: R4) => SoA<R5>,
+  f6: (a: R5) => SoA<R6>,
+  f7: (a: R6) => SoA<R7>,
+  f8: (a: R7) => SoA<R8>,
+  f9: (a: R8) => SoA<R9>,
+  f10: (a: R9) => SoA<R10>
+): Promise<R10>;
 /**
  * Apply a series of asynchronous OR synchronous functions to an input. Always returns a Promise. Alias for `pipe`.
  */
@@ -272,6 +343,31 @@ export declare function asyncPipe<R0, R1, R2, R3, R4, R5, R6, R7, R8>(
   f7: (a: R6) => SoA<R7>,
   f8: (a: R7) => SoA<R8>
 ): Promise<R8>;
+export declare function asyncPipe<R0, R1, R2, R3, R4, R5, R6, R7, R8, R9>(
+  input: R0,
+  f1: (a: R0) => SoA<R1>,
+  f2: (a: R1) => SoA<R2>,
+  f3: (a: R2) => SoA<R3>,
+  f4: (a: R3) => SoA<R4>,
+  f5: (a: R4) => SoA<R5>,
+  f6: (a: R5) => SoA<R6>,
+  f7: (a: R6) => SoA<R7>,
+  f8: (a: R7) => SoA<R8>,
+  f9: (a: R8) => SoA<R9>
+): Promise<R9>;
+export declare function asyncPipe<R0, R1, R2, R3, R4, R5, R6, R7, R8, R9, R10>(
+  input: R0,
+  f1: (a: R0) => SoA<R1>,
+  f2: (a: R1) => SoA<R2>,
+  f3: (a: R2) => SoA<R3>,
+  f4: (a: R3) => SoA<R4>,
+  f5: (a: R4) => SoA<R5>,
+  f6: (a: R5) => SoA<R6>,
+  f7: (a: R6) => SoA<R7>,
+  f8: (a: R7) => SoA<R8>,
+  f9: (a: R8) => SoA<R9>,
+  f10: (a: R9) => SoA<R10>
+): Promise<R9>;
 /**
  * Apply a series of asynchronous OR synchronous functions to every item in an array. Always returns a Promise.
  */
