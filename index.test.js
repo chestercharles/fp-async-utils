@@ -7,6 +7,7 @@ const {
   pipe,
   asyncMap,
   map,
+  flatMap,
   setIn,
   asyncFilter,
   filter,
@@ -14,6 +15,7 @@ const {
 
 const addTwo = async (value) => value + 2;
 const addTwoSync = (value) => value + 2;
+const split = (separator) => (value) => value.split(separator);
 
 describe("fp-async-utils", () => {
   it("asyncPipe", async () => {
@@ -50,6 +52,14 @@ describe("fp-async-utils", () => {
     expect(result2[1]).to.equal(4);
     expect(result1[2]).to.equal(5);
     expect(result2[2]).to.equal(5);
+  });
+
+  it("flatMap", async () => {
+    const result = await flatMap(split(", "))(["hello, world", "foo, bar"]);
+    expect(result[0]).to.equal("hello");
+    expect(result[1]).to.equal("world");
+    expect(result[2]).to.equal("foo");
+    expect(result[3]).to.equal("bar");
   });
 
   it("ado", async () => {

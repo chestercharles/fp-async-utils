@@ -31,6 +31,11 @@ const map = (fn) => (arr) =>
   Promise.all(arr.map(async (itm) => asyncPipe(itm, fn)));
 
 /**
+ * Apply an asynchronous OR synchronous function to every item in an array and flatten the result. Always returns a Promise.
+ */
+const flatMap = (fn) => (arr) => map(fn)(arr).then((results) => results.flat());
+
+/**
  * Apply an asynchronous OR synchronous function to every item in an array. Always returns a Promise. Alias for `map`.
  */
 const asyncMap = map.bind({});
@@ -76,6 +81,7 @@ module.exports = {
   pipe,
   asyncMap,
   map,
+  flatMap,
   setIn,
   asyncFilter,
   filter,
