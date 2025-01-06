@@ -375,6 +375,12 @@ export declare function map<Item, MappedItem>(
   fn: (a: Item) => MappedItem
 ): (arr: Item[]) => Promise<ThenArg<MappedItem>[]>;
 /**
+ * Apply a series of asynchronous OR synchronous functions to every item in an array and flatten the result. Always returns a Promise.
+ */
+export declare function flatMap<Item, MappedItem extends Array>(
+  fn: (a: Item) => MappedItem
+): (arr: Item[]) => Promise<ThenArg<MappedItem[number]>[]>;
+/**
  * Apply a series of asynchronous OR synchronous functions to every item in an array. Always returns a Promise. Alias for `map`.
  */
 export declare function asyncMap<Item, MappedItem>(
