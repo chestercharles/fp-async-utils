@@ -56,6 +56,17 @@ const result = await pipe(arr, map(addTwo));
 console.log(result); // [3, 4, 5]
 ```
 
+### flatMap
+
+Apply a series of asynchronous OR synchronous functions to every item in an array and flatten the result. Always returns a Promise.
+
+```typescript
+const arr = ["hello, world", "foo, bar"];
+const split = (value) => value.split(", ");
+const result = await pipe(arr, flatMap(split));
+console.log(result); // ["hello", "world", "foo", "bar"]
+```
+
 ### filter
 
 Apply a asynchronous OR synchronous predicate to filter out items in an array. Always returns a Promise.
